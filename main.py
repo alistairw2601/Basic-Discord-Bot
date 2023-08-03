@@ -5,7 +5,6 @@ from itertools import cycle
 import os
 import asyncio
 import random
-import os
 
 client = commands.Bot(command_prefix="=", intents=discord.Intents.all())
 
