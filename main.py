@@ -35,5 +35,9 @@ async def on_message(message):
 
     if "=dice" in message.content:
         await  message.channel.send(f"You rolled {random.randint(1,6)}!")
+    if "=coinflip" in message.content:
+        coin=["heads","tails"]
+        result=random.choice(coin)
+        await message.channel.send(f"The coin landed on {result}")
 
 client.run(token)
