@@ -1,9 +1,7 @@
-import shutil
 import discord
 from discord.ext import commands, tasks
 from itertools import cycle
 import os
-import asyncio
 import random
 
 client = commands.Bot(command_prefix="=", intents=discord.Intents.all())
