@@ -3,7 +3,8 @@ from discord.ext import commands, tasks
 from itertools import cycle
 import os
 import random
-import os
+import asyncio
+
 coin=["heads","tails"]
 f=open("coinscore.txt",mode="r")
 file=f.read()
@@ -41,6 +42,9 @@ async def on_ready():
 async def on_message(message):
     if message.author.id == client.user.id:
         return
+
+    if "=help" in message.content:
+        await message.channel.send("=dice   roll a dice.\n\n=coinflip   flip a coin.\n\n=coinguess   put either heads, tails or stats after this command to bet on the outcome or to view your stats at this game.")
 
     if "=dice" in message.content:
         await  message.channel.send(f"You rolled {random.randint(1,6)}!")
